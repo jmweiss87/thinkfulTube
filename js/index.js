@@ -15,6 +15,7 @@ function renderVideo(video) {
     <div>
       <h2>
       <a class="js-result-name" href="${video.snippet.channelTitle}" target="_blank">${video.snippet.channelTitle}</a>
+      <a class="js-result-name" href="${video.snippet.description}" target="_blank">${video.snippet.description}</a>
 
     </div>
   `;
