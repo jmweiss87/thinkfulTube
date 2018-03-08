@@ -14,18 +14,21 @@ function renderVideo(video) {
   return `
     <div>
       <h2>
+      <img src="${video.snippet.thumbnails.default.url}" alt="thumbnail" height="90" width="120">
       <a class="js-result-name" href="${video.snippet.channelTitle}" target="_blank">${video.snippet.channelTitle}</a>
       <a class="js-result-name" href="${video.snippet.description}" target="_blank">${video.snippet.description}</a>
-      <a class="js-result-name" href="${video.snippet.thumbnails.default}" target="_blank">${video.snippet.thumbnails.default} </a>
     </div>
   `;
 }
 
 // make the thumbnail showup using the img HTML tag above in renderVideo function.
+// reminder: <img src="thumbnail.gif" alt="Thumbnail" height="42" width="42">
 
 // by <a class="js-user-name" href="${video.owner.html_url}" target="_blank">${video.owner.login}</a></h2>
 // <p>Number of watchers: <span class="js-watchers-count">${video.watchers_count}</span></p>
 // <p>Number of open issues: <span class="js-issues-count">${video.open_issues}</span></p>
+{/* <a class="js-result-name" href="${video.snippet.thumbnails.default}" target="_blank">${video.snippet.thumbnails.default} </a> */}
+
 
 function displayYouTubeSearchData(data) { 
   const results = data.items.map((video, index) => renderVideo(video));
