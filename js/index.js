@@ -16,10 +16,12 @@ function renderVideo(video) {
       <h2>
       <a class="js-result-name" href="${video.snippet.channelTitle}" target="_blank">${video.snippet.channelTitle}</a>
       <a class="js-result-name" href="${video.snippet.description}" target="_blank">${video.snippet.description}</a>
-
+      <a class="js-result-name" href="${video.snippet.thumbnails.default}" target="_blank">${video.snippet.thumbnails.default} </a>
     </div>
   `;
 }
+
+// make the thumbnail showup using the img HTML tag above in renderVideo function.
 
 // by <a class="js-user-name" href="${video.owner.html_url}" target="_blank">${video.owner.login}</a></h2>
 // <p>Number of watchers: <span class="js-watchers-count">${video.watchers_count}</span></p>
