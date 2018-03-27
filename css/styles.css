@@ -1,4 +1,37 @@
-body {
-    font: red;
-    padding-top: 40px;
+* {
+    box-sizing: border-box;
+}
+
+main {
+    border: 1px grey solid;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.title-container{
+    text-align: center;
+    background-color: #60A0EC;
+    font: black;
+}
+
+div.js-search-results {
+    color: #1960B5;
+    background-color: #60A0EC;
+    border-bottom: 1px solid black;
+    list-style-type: none;
+    text-decoration: none;
+    max-width: 250px;
+    position: relative;
+    padding-left: 0;
+}
+
+/* .js-result-actual affects each of the results of the query */
+
+.js-result-actual{
+text-decoration: none;
+
+}
+
+a .js-result-name {
+    color: red;
+    text-decoration: none;
 }
