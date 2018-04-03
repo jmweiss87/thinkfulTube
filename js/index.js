@@ -13,17 +13,22 @@ function getDataFromApi(searchTerm, callback) {
 function renderVideo(video) {
   return `
     <div class="js-result-actual" id="${video.id.videoId} >
-      <h2>
+      <h2 class="js-result-actual-items">
         <a href="https://www.youtube.com/watch?v=${video.id.videoId}">
           <img class="thumbnail-size" src="${video.snippet.thumbnails.medium.url}" alt="thumbnail" height="${video.snippet.thumbnails.high.height}" width="${video.snippet.thumbnails.high.width}">
         </a>  
-        <p class="fresh-kicks">${video.snippet.channelTitle}</p>
         <a class="js-result-name" href="${video.snippet.channelTitle}" target="_blank">${video.snippet.channelTitle}</a>
         <a class="js-result-name" href="${video.snippet.description}" target="_blank">${video.snippet.description}</a>
       </h2>  
     </div>
   `;
 }
+
+
+//removed:
+//<p class="fresh-kicks">${video.snippet.channelTitle}</p>
+
+
 // id="${video.id.videoId}"
 
 // need to style the results using CSS. Make sure using good spacing, reasonable color pallette, etc.

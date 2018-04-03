@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 30px;
+}
+
 main {
     border: 1px grey solid;
     font-family: "Times New Roman", Times, serif;
@@ -13,25 +17,46 @@ main {
     font: black;
 }
 
-div.js-search-results {
+/* realized using div.js-search-results was putting all in container. */
+
+.js-search-results {
     color: #1960B5;
     background-color: #60A0EC;
     border-bottom: 1px solid black;
     list-style-type: none;
     text-decoration: none;
-    max-width: 250px;
-    position: relative;
-    padding-left: 0;
+    /* display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 200px; */
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(1, [col] 100px ) ;
+    grid-template-rows: repeat(5, [row] auto  );
+
 }
 
 /* .js-result-actual affects each of the results of the query */
 
 .js-result-actual{
-text-decoration: none;
-
+    text-decoration: none;
+    display: inline-grid;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 100%;
 }
 
-a .js-result-name {
+.js-result-actual-items{
+    justify-self: end;
+    /* grid-column-start: n;
+    grid-column-end: n;
+    grid-row-start: n;
+    grid-row-end: n;    */
+}
+
+
+
+/* a .js-result-name {
     color: red;
     text-decoration: none;
-}
+} */
