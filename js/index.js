@@ -12,38 +12,17 @@ function getDataFromApi(searchTerm, callback) {
 
 function renderVideo(video) {
   return `
-    <div class="js-result-actual" id="${video.id.videoId} >
-      <h2 class="js-result-actual-items">
+    <div class="js-result-actual" id=${video.id.videoId}>
         <a href="https://www.youtube.com/watch?v=${video.id.videoId}">
-          <img class="thumbnail-size" src="${video.snippet.thumbnails.medium.url}" alt="thumbnail" height="${video.snippet.thumbnails.high.height}" width="${video.snippet.thumbnails.high.width}">
-        </a>  
-        <a class="js-result-name" href="${video.snippet.channelTitle}" target="_blank">${video.snippet.channelTitle}</a>
-        <a class="js-result-name" href="${video.snippet.description}" target="_blank">${video.snippet.description}</a>
-      </h2>  
+        <img class="thumbnail-size" src="${video.snippet.thumbnails.medium.url}" alt="thumbnail" 
+        height="${video.snippet.thumbnails.medium.height}" width="${video.snippet.thumbnails.medium.width}"> 
+        </a> 
+        <a class="js-result-items" href="https://www.youtube.com/watch?v=${video.id.videoId}" 
+        target="_blank">${video.snippet.channelTitle}</a>
+        <a class="js-result-items" target="_blank">${video.snippet.description}</a>
     </div>
   `;
 }
-
-
-//removed:
-//<p class="fresh-kicks">${video.snippet.channelTitle}</p>
-
-
-// id="${video.id.videoId}"
-
-// need to style the results using CSS. Make sure using good spacing, reasonable color pallette, etc.
-// 
-
-// how you'd like to see the search result, 3 or 4 videos per row or column.....
-// 
-
-// make the thumbnail showup using the img HTML tag above in renderVideo function.
-// reminder: <img src="thumbnail.gif" alt="Thumbnail" height="42" width="42">
-
-// by <a class="js-user-name" href="${video.owner.html_url}" target="_blank">${video.owner.login}</a></h2>
-// <p>Number of watchers: <span class="js-watchers-count">${video.watchers_count}</span></p>
-// <p>Number of open issues: <span class="js-issues-count">${video.open_issues}</span></p>
-{/* <a class="js-result-name" href="${video.snippet.thumbnails.default}" target="_blank">${video.snippet.thumbnails.default} </a> */}
 
 
 function displayYouTubeSearchData(data) { 

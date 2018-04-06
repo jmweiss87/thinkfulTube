@@ -25,10 +25,6 @@ main {
     border-bottom: 1px solid black;
     list-style-type: none;
     text-decoration: none;
-    /* display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-gap: 200px; */
-
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(1, [col] 100px ) ;
@@ -47,16 +43,9 @@ main {
 }
 
 .js-result-actual-items{
-    justify-self: end;
-    /* grid-column-start: n;
-    grid-column-end: n;
-    grid-row-start: n;
-    grid-row-end: n;    */
+    /* justify-self: end; */
+    grid-column-start: 1; 
+    grid-column-end: 4; 
+    grid-row-start: 1; 
+    grid-row-end: 3; 
 }
-
-
-
-/* a .js-result-name {
-    color: red;
-    text-decoration: none;
-} */
