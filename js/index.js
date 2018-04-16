@@ -3,7 +3,7 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 function getDataFromApi(searchTerm, callback) {
   const query = {
     q: `${searchTerm} in:name`,
-    per_page: 5,
+    per_page: 5, // This is not effecting my query number. Must be superficial or for design.
     key: "AIzaSyBJK7UgC7c31fLCgIMZb50TtQ4GOmOI-7g",
     part: "snippet"
   }
@@ -14,7 +14,7 @@ function renderVideo(video) {
   return `
     <div class="js-result-actual" id=${video.id.videoId}>
         <a href="https://www.youtube.com/watch?v=${video.id.videoId}">
-        <img class="thumbnail-size" src="${video.snippet.thumbnails.medium.url}" alt="thumbnail" 
+        <img class="js-result-items" src="${video.snippet.thumbnails.medium.url}" alt="thumbnail" 
         height="${video.snippet.thumbnails.medium.height}" width="${video.snippet.thumbnails.medium.width}"> 
         </a> 
         <a class="js-result-items" href="https://www.youtube.com/watch?v=${video.id.videoId}" 

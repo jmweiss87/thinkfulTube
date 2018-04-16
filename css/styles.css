@@ -3,7 +3,7 @@
 }
 
 body {
-    margin: 30px;
+    margin: 5px;
 }
 
 main {
@@ -26,26 +26,38 @@ main {
     list-style-type: none;
     text-decoration: none;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(1, [col] 100px ) ;
-    grid-template-rows: repeat(5, [row] auto  );
-
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, [col] 1fr ) ;
+    grid-template-rows: repeat(3, [row] 1fr );
 }
 
-/* .js-result-actual affects each of the results of the query */
+/* fr is the fraction of free sppace in the grid, sounds very useful...example (in container) 
+The fr unit allows you to set the size of a track as a fraction of the free space of the grid container. 
+For example, this will set each item to one third the width of the grid container:
+.container{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+*/
+/* trying js-result-actual as the items. */
+
+/* grid-column-start/end + grid-row-start/end; 
+These Determine a grid item's location within the grid by referring to specific grid lines. 
+grid-column-start/grid-row-start is the line where the item begins, 
+and grid-column-end/grid-row-end is the line where the item ends. */
+
+/* Values for items:
+<line> - can be a number to refer to a numbered grid line, or a name to refer to a named grid line
+span <number> - the item will span across the provided number of grid tracks
+span <name> - the item will span across until it hits the next line with the provided name
+auto - indicates auto-placement, an automatic span, or a default span of one */
 
 .js-result-actual{
-    text-decoration: none;
-    display: inline-grid;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr)
+
 }
 
-.js-result-actual-items{
-    /* justify-self: end; */
-    grid-column-start: 1; 
-    grid-column-end: 4; 
-    grid-row-start: 1; 
-    grid-row-end: 3; 
+.js-result-items{
+    /* vertical-align: center; */
+    justify-self: center;
 }
