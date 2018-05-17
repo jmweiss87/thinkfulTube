@@ -8,6 +8,17 @@ $('#next').on('click','a', function(event){
   nextPageCall( state.searchTerm , displayYouTubeSearchData);
 });
 
+$('#previous').on('click','a', function(event){
+  event.preventDefault();
+  previousPageCall( state.searchTerm , displayYouTubeSearchData);
+});
+
+// put prevPageToken into state at the same time as nextPageToken...
+// then need the prevPageCall
+// pick up prevPageToken with nextPageToken, put it into state, previousPageCall
+// after next has been clicked, we want to add, append, .html or some method our previousPageToken
+// into a previous link, next to next.
+
 // ok I put searchTerm in quotes, and it is already defined, out of quotes it is not defined.
 // as pointed out by error in console.
 
@@ -56,6 +67,26 @@ function nextPageCall(searchTerm, callback) {
   $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
 }
 
+// asking how we chose "pageToken"
+
+// previous pagecall is seperate function from nxtpcall
+function previousPageCall(searchTerm, callback) {
+  const token = state.previousPageToken;
+  const query = {
+    q: `${searchTerm} in:name`,
+    key: "AIzaSyBJK7UgC7c31fLCgIMZb50TtQ4GOmOI-7g",
+    part: "snippet",
+    maxResults: 25,
+    pageToken: token
+  }
+  $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
+}
+
+// create previousPageLink function, using jQuery....
+// get previouspageToken in the state - first time to encounter that is with nextPageCaLl
+// previouspageCall function
+// code which makes previousPageLink
+
 // in watchSubmit, take this searchTerm get s
 // ** nextpagetoken and searchterm IN THE STATE....
 
@@ -75,7 +106,7 @@ function nextPageCall(searchTerm, callback) {
 function displayYouTubeSearchData(data) { 
   const results = data.items.map((video, index) => renderVideo(video));
   state.nextPageToken = data.nextPageToken;
-
+  state.previousPageToken = data.previousPageToken;
   // IN THIS FUNCTION, put both the nextPagetoken and the searchterm in here so they can be used later
   // inspect results, state.next
   // have access to data here...if click on next class, then fire nextPageCall function.
@@ -99,9 +130,8 @@ function watchSubmit() {
 }
 
 $(watchSubmit);
-// line 95....
 
-// if you're passing a variable along from functions, reuse the same 
+// if you're passing a variable along from functions, reuse the same name
 // going to need to make some changes to getDataFromApi...think of ways
 // think of scenarios where you do have those tokens and scednarios where you don't have those tokens...
 // Use that nextPageToken object, and it has to be part of the API call, otherwise it won't connect to the object.
