@@ -57,7 +57,7 @@ auto - indicates auto-placement, an automatic span, or a default span of one */
 
 }
 
+
 .js-result-items{
-    /* vertical-align: center; */
     justify-self: center;
 }
