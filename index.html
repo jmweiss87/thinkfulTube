@@ -9,31 +9,41 @@
           src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Fjalla+One|Open+Sans+Condensed:300|Oswald|Raleway|Song+Myung" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     </head>
     <body>
       <main role="main">
         <div class="title-container">
-          <h1>Thinkful Tube</h1>
-          <h2>Search YouTube Videos by name</h2>
-            <form action="#" class="js-search-form">
+          <span class="h1-remake">Thinkful Tube Search YouTube Videos by name</span>
+            <form id="heading" action="#" class="js-search-form">
               <label for="query"></label>
               <input type="text" class="js-query">
-              <button type="submit">Search</button>
+              <button id="button-style" type="submit">Search</button>
             </form>
-          <h3>Results</h3>
+          <span class="h3-remake">Results</span>
+          <div class="next-previous">
+            <div id="next">
+              <a class="clicker" href="#">Next Page</a>
+            </div>
+            <div id="previous">
+              <a class="clicker" href="#">Previous Page</a>
+            </div> 
+          </div>    
         </div>  
 
         <div class="js-search-results">
           <!-- Results here, js-results-actual -->
         </div>
-        <div id="next">
-          <a href="#">Next Page</a>
-         </div>
-         <div id="previous">
-          <a href="#">Previous Page</a>
-         </div> 
+        <div class="next-previous">
+          <div id="next">
+            <a class="clicker" href="#">Next Page</a>
+          </div>
+          <div id="previous">
+            <a class="clicker" href="#">Previous Page</a>
+          </div> 
+        </div>    
       </main>
       <script src="js/index.js"></script>
     </body>

@@ -1,13 +1,11 @@
-* {
-    box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 
 body {
     margin: 5px;
+    background-color: #60A0EC;
 }
 
 main {
-    border: 1px grey solid;
     font-family: "Times New Roman", Times, serif;
 }
 
@@ -17,12 +15,36 @@ main {
     font: black;
 }
 
-/* realized using div.js-search-results was putting all in container. */
+.h1-remake{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    color: antiquewhite;
+    font-size: 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    position: relative;
+    top: 4px;
+    padding-right: 12px;
+}
+
+.h2-remake{
+    color: #2f519b;
+    font-size: 24px;
+    display: block;
+}
+
+.h3-remake{
+    color: #fafafa;
+    font-size: 20px;
+    display: block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+}
 
 .js-search-results {
     color: #1960B5;
     background-color: #60A0EC;
-    border-bottom: 1px solid black;
     list-style-type: none;
     text-decoration: none;
     display: grid;
@@ -31,25 +53,12 @@ main {
     grid-template-rows: repeat(3, [row] 1fr );
 }
 
-/* fr is the fraction of free sppace in the grid, sounds very useful...example (in container) 
-The fr unit allows you to set the size of a track as a fraction of the free space of the grid container. 
-For example, this will set each item to one third the width of the grid container:
-.container{
-    grid-template-columns: 1fr 1fr 1fr;
+#button-style{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(195, 234, 249);
+    border-radius: 5px;
 }
-*/
-/* trying js-result-actual as the items. */
-
-/* grid-column-start/end + grid-row-start/end; 
-These Determine a grid item's location within the grid by referring to specific grid lines. 
-grid-column-start/grid-row-start is the line where the item begins, 
-and grid-column-end/grid-row-end is the line where the item ends. */
-
-/* Values for items:
-<line> - can be a number to refer to a numbered grid line, or a name to refer to a named grid line
-span <number> - the item will span across the provided number of grid tracks
-span <name> - the item will span across until it hits the next line with the provided name
-auto - indicates auto-placement, an automatic span, or a default span of one */
 
 .js-result-actual{
     display: grid;
@@ -60,4 +69,55 @@ auto - indicates auto-placement, an automatic span, or a default span of one */
 
 .js-result-items{
     justify-self: center;
+    max-width: 480px;
+}
+
+.next-previous{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    padding-bottom: 24px;
+}
+
+a.clicker{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+a.clicker:hover{
+    color: rgb(52, 103, 197);
+}
+
+#heading{
+display: inline-block;
+}
+
+@media only screen and (max-width: 1200px){
+    .js-search-results {
+        color: #1960B5;
+        background-color: #60A0EC;
+        list-style-type: none;
+        text-decoration: none;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, [col] 1fr );
+        grid-template-rows: repeat(1, [row] 1fr );
+        width: 100%;
+        }
+
+
+    .js-result-actual{
+        width: 100%;
+        height: 50%;
+    }
+
+    .js-result-items{
+        justify-self: center;
+    }
+
 }
