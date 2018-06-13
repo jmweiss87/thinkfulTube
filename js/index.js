@@ -2,12 +2,12 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 state = {};
 
-$('#next').on('click','a', function(event){
+$('.next').on('click','a', function(event){
   event.preventDefault();
   nextPageCall( state.searchTerm , displayYouTubeSearchData);
 });
 
-$('#previous').on('click','a', function(event){
+$('.previous').on('click','a', function(event){
   event.preventDefault();
   previousPageCall( state.searchTerm , displayYouTubeSearchData);
 });
