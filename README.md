@@ -1,3 +1,3 @@
 # thinkfulTube
-Project: Make AJAX call from my page, 'thinkfulTube' to YouTube using their data API, and then representing that data on the UI.
+Project: Make Ajax call from my page, 'thinkfulTube' to YouTube data API, and then rendering that data on the user interface for interaction.
 Second phase: Make the project aXe accessibility compliant.
