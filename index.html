@@ -17,10 +17,11 @@
       <main role="main">
         <div class="title-container">
           <!-- <span id="form" class="h1-remake">Thinkful Tube Search YouTube Videos by name</span> -->
-          <h1 id="form" class="h1-remake">Thinkful Tube Search YouTube Videos by name</h1>
+          <h1 class="h1-remake">Thinkful Tube Search YouTube Videos by name</h1>
+            <label aria-labelledby="heading" for="form"></label>
             <form id="heading" action="#" class="js-search-form">
-              <label aria-labelledby="form" for="query"></label>
-              <input type="text" class="js-query">
+              <label aria-labelledby="search-query" for="query"></label>
+              <input id="search-query" type="text" class="js-query">
               <button id="button-style" type="submit">Search</button>
             </form>
           <span class="h3-remake">Results</span>
