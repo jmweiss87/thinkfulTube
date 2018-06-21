@@ -2,7 +2,7 @@
 
 body {
     margin: 5px;
-    background-color: #60A0EC;
+    background-color: #104F8E;
 }
 
 main {
@@ -11,7 +11,6 @@ main {
 
 .title-container{
     text-align: center;
-    background-color: #60A0EC;
     font: black;
 }
 
@@ -29,13 +28,13 @@ main {
 }
 
 .h2-remake{
-    color: #2f519b;
+    color: antiquewhite;
     font-size: 24px;
     display: block;
 }
 
 .h3-remake{
-    color: #fafafa;
+    color: antiquewhite;
     font-size: 20px;
     display: block;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -43,8 +42,7 @@ main {
 }
 
 .js-search-results {
-    color: #1960B5;
-    background-color: #60A0EC;
+    color: antiquewhite;
     list-style-type: none;
     text-decoration: none;
     display: grid;
@@ -77,6 +75,7 @@ main {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     padding-bottom: 24px;
+    color: antiquewhite;
 }
 
 a.clicker{
@@ -90,7 +89,7 @@ a.clicker{
 }
 
 a.clicker:hover{
-    color: rgb(52, 103, 197);
+    color: antiquewhite;
 }
 
 #heading{
@@ -99,8 +98,7 @@ display: inline-block;
 
 @media only screen and (max-width: 1200px){
     .js-search-results {
-        color: #1960B5;
-        background-color: #60A0EC;
+        color: antiquewhite;
         list-style-type: none;
         text-decoration: none;
         display: grid;
