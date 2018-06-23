@@ -90,6 +90,9 @@ a.clicker{
 
 a.clicker:hover{
     color: antiquewhite;
+    border: 1px antiquewhite solid;
+    border-radius: 4px;
+    padding: 3px;
 }
 
 #heading{
