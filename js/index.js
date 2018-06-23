@@ -23,14 +23,14 @@ function getDataFromApi(searchTerm, callback) {
 }
 
 
-function renderVideo(video) {
+function renderVideo(video, index) {
   return `
     <div class="js-result-actual" id=${video.id.videoId}>
         <a class="js-result-items" href="https://www.youtube.com/watch?v=${video.id.videoId}">
         <img src="${video.snippet.thumbnails.high.url}" alt="thumbnail"> 
          
         </a> 
-        <a class="js-result-items" id="js-result-title" href="https://www.youtube.com/watch?v=${video.id.videoId}" 
+        <a class="js-result-items" id="js-result-title-${index}" href="https://www.youtube.com/watch?v=${video.id.videoId}" 
         target="_blank">${video.snippet.channelTitle}</a>
         <a class="js-result-items" target="_blank">${video.snippet.description}</a>
     </div>
@@ -62,7 +62,7 @@ function previousPageCall(searchTerm, callback) {
 }
 
 function displayYouTubeSearchData(data) { 
-  const results = data.items.map((video, index) => renderVideo(video));
+  const results = data.items.map((video, index) => renderVideo(video, index));
   state.nextPageToken = data.nextPageToken;
   state.previousPageToken = data.previousPageToken;
   $('.js-search-results').html(results);
