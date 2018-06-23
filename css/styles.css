@@ -64,10 +64,16 @@ main {
 
 }
 
-
 .js-result-items{
     justify-self: center;
     max-width: 480px;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+#js-result-title{
+    font-size: 22px;
+    padding: 3px;
 }
 
 .next-previous{
